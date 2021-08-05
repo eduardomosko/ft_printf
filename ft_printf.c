@@ -38,11 +38,10 @@ int	ft_vdprintf(int fd, const char *format, va_list *ap)
 	it = format;
 	while (*it)
 	{
-		if (*it == '%')
+		ret = 0;
+		if (*it == '%' && *++it)
 		{
-			ret = ft_fputconv(fd, *(it + 1), ap);
-			if (ret)
-				it++;
+			ret = ft_fputconv(fd, *it, ap);
 		}
 		else
 		{
