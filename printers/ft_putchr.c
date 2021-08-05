@@ -32,7 +32,12 @@ int	ft_fputchar(int fd, unsigned char c)
 
 int	ft_fputstr(int fd, const char *s)
 {
+	size_t	len;
+
 	if (!s)
 		s = "(null)";
-	return (write(fd, s, ft_strlen(s)));
+	len = ft_strlen(s);
+	if (!len)
+		return (0);
+	return (write(fd, s, len));
 }
