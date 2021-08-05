@@ -18,14 +18,21 @@ const char	*g_LOOKUP = "0123456789ABCDEF";
 static size_t	ft_format_hex(char *out, size_t n, const char *lookup)
 {
 	size_t	count;
+	size_t	nb;
 
-	count = 1;
+	nb = n;
 	*out = '0';
+	count = (n == 0);
+	while (nb)
+	{
+		nb /= 16;
+		count++;
+	}
+	out += count;
 	while (n)
 	{
-		*out++ = n % 16;
+		*--out = lookup[n % 16];
 		n /= 16;
-		count++;
 	}
 	return (count);
 }
