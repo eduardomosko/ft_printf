@@ -32,5 +32,7 @@ int	ft_fputchar(int fd, unsigned char c)
 
 int	ft_fputstr(int fd, const char *s)
 {
+	if (!s)
+		s = "(null)";
 	return (write(fd, s, ft_strlen(s)));
 }
