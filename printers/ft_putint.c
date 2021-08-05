@@ -36,17 +36,19 @@ static size_t	ft_format_uint(char *out, unsigned int n)
 
 int	ft_fputint(int fd, int n)
 {
-	char	buf[sizeof(n) / 4 * 10 + 1];
-	size_t	to_write;
-	int		negative;
+	char			buf[sizeof(n) / 4 * 10 + 1];
+	size_t			to_write;
+	int				negative;
+	unsigned int	num;
 
+	num = n;
 	negative = n < 0;
 	if (negative)
 	{
-		n *= -1;
+		num *= -1;
 		*buf = '-';
 	}
-	to_write = ft_format_uint(buf + negative, n) + negative;
+	to_write = ft_format_uint(buf + negative, num) + negative;
 	return (write(fd, buf, to_write));
 }
 
