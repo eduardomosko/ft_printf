@@ -12,9 +12,6 @@
 
 #include <unistd.h>
 
-const char	*g_lookup = "0123456789abcdef";
-const char	*g_lookup_upper = "0123456789ABCDEF";
-
 static size_t	ft_format_hex(char *out, size_t n, const char *lookup)
 {
 	size_t	count;
@@ -53,7 +50,7 @@ int	ft_fputhex(int fd, unsigned int n)
 	char	buf[sizeof(n) * 2];
 	size_t	to_write;
 
-	to_write = ft_format_hex(buf, n, g_lookup_upper);
+	to_write = ft_format_hex(buf, n, "0123456789abcdef");
 	return (write(fd, buf, to_write));
 }
 
@@ -62,6 +59,6 @@ int	ft_fputhex_upper(int fd, unsigned int n)
 	char	buf[sizeof(n) * 2];
 	size_t	to_write;
 
-	to_write = ft_format_hex(buf, n, g_lookup);
+	to_write = ft_format_hex(buf, n, "0123456789ABCDEF");
 	return (write(fd, buf, to_write));
 }
