@@ -55,7 +55,7 @@ int	ft_fputuint(int fd, unsigned int n);
 
 int	ft_fputptr(int fd, const void *ptr);
 int	ft_fputhex(int fd, unsigned int n);
-int	ft_fputHEX(int fd, unsigned int n);
+int	ft_fputhex_upper(int fd, unsigned int n);
 
 /*
 ** Char printing

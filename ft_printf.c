@@ -70,7 +70,7 @@ int	ft_fputconv(int fd, t_conversion c, va_list *ap)
 	if (c == CONV_HEXLOW)
 		return (ft_fputhex(fd, va_arg(*ap, unsigned int)));
 	if (c == CONV_HEXUP)
-		return (ft_fputHEX(fd, va_arg(*ap, unsigned int)));
+		return (ft_fputhex_upper(fd, va_arg(*ap, unsigned int)));
 	if (c == CONV_PERCENT)
 		return (ft_fputchar(fd, '%'));
 	if (c == CONV_NONE)
