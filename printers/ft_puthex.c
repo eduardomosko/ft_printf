@@ -39,9 +39,11 @@ int	ft_fputptr(int fd, const void *ptr)
 	char	buf[sizeof(ptr) * 2 + 2];
 	size_t	to_write;
 
+	if (ptr == NULL)
+		return (write(fd, "(nil)", 5));
 	buf[0] = '0';
 	buf[1] = 'x';
-	to_write = 2 + ft_format_hex(buf + 2, (size_t)ptr, g_lookup);
+	to_write = 2 + ft_format_hex(buf + 2, (size_t)ptr, "0123456789abcdef");
 	return (write(fd, buf, to_write));
 }
 

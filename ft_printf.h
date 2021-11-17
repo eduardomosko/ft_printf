@@ -23,8 +23,8 @@ typedef enum e_conversion
 {
 	CONV_INT = 'i',
 	CONV_DEC = 'd',
-	CONV_HEXUP = 'x',
-	CONV_HEXLOW = 'X',
+	CONV_HEXUP = 'X',
+	CONV_HEXLOW = 'x',
 	CONV_CHAR = 'c',
 	CONV_STR = 's',
 	CONV_UINT = 'u',
