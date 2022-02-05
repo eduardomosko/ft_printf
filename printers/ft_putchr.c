@@ -33,7 +33,9 @@ int	ft_fputchar(int fd, unsigned char c)
 int	ft_fputstr(int fd, const char *s)
 {
 	size_t	len;
-
+	
+	if (!s)
+		s = "(null)";
 	len = ft_strlen(s);
 	if (!len)
 		return (0);
